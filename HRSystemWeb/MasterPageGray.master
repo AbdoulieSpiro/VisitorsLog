@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageGray.master.cs"
+    Inherits="HRSystemWeb.MasterPageGray" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="CustomControls/MenuControl_Horizontal.ascx" TagName="HM" TagPrefix="uc" %>
+<%@ Register Src="~/CustomControls/PageHeader.ascx" TagName="PageHeader" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>SMS</title>
+
+    <script type="text/javascript" src="http://localhost:51175/HRSystemWeb/JavaScript/scrollsaver.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+       function verifyDocDelete(sender, args) 
+        {   
+                var IsChecked=0;
+                var TargetChildControl = "chkDelete";
+                var Inputs = document.getElementsByTagName("input");
+            
+                for(var n = 0; n < Inputs.length; ++n)
+                {
+                        if(Inputs[n].type == 'checkbox' && Inputs[n].id.indexOf(TargetChildControl,0) >= 0)
+                        {    
+                               if(Inputs[n].checked==true)
+                               {
+                                      var IsChecked=1;  
+                               }
+                        }
+                }
+               if (IsChecked > 0)   
+                {     
+                            if(confirm('Deleteing the Selected Record(s)?'))
+                            {
+                                args.IsValid =true;
+                            } 
+                            else
+                            
+                            {
+                               args.IsValid = false;  
+                            }
+                }  
+                else   
+                {  
+                            alert('Please first select any record');  
+                            args.IsValid = false; 
+                } 
+           
+        }
+        
+        
+        
+        
+
+
+            function printPopUp()
+            {
+            var printContent = document.getElementById("myt");
+            var windowUrl = 'about:blank';
+            var num;
+            var uniqueName = new Date();
+            var windowName = 'Print' + uniqueName.getTime();var printWindow = window.open(num, windowName, 'left=50000,top=50000,width=0,height=0');
+            printWindow.document.write(printContent.innerHTML);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+            }        
+            
+            
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+
+    <script type="text/javascript">
+    var xPos,yPos;
+    var prm=Sys.WebForms.PageRequestManager.getInstance();
+ 
+    prm.add_beginRequest(BeginRequest);
+    prm.add_endRequest(EndRequest);  
+ 
+    function BeginRequest(sender,args)
+    {
+     
+
+     var contentPanel = $get("<%=myPanel.ClientID %>");
+//     xPos=contentPanel.scrollLeft;
+//     yPos=contentPanel.scrollTop;
+//   
+      
+      xPos=document.documentElement.scrollLeft;
+      yPos=document.documentElement.scrollTop;
+     
+    }
+    function EndRequest(sender,args)
+    {
+      //Same thing here, you need to set the Panel's scroll:
+      var contentPanel = $get("<%=myPanel.ClientID %>");
+      contentPanel.scrollLeft=xPos;
+      contentPanel.scrollTop=yPos;
+      document.body.scrollTop=yPos;
+    
+    }
+    
+
+ 
+    </script>
+
+    <div class="main">
+        <div class="top">
+        </div>
+        <table cellpadding="0" cellspacing="0">
+            <tr style="height: 15px">
+                <td class="BodyWrapLeftTop">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td class="BodyWrapMiddleTop">
+                    &nbsp;
+                </td>
+                <td class="BodyWrapRightTop">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="BodyWrapMiddleLeft">
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <div style="background: none repeat scroll 0 0 #FFFFFF;">
+                        <div id="header">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr style="height: 100px">
+                                    <td class="LOGOTOP" width="30%">
+                                        <div>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <asp:Label ID="lblWelCome" runat="server" Text="Welcome To ("></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- Here New Code Block Ends.-->
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <!-- TOP MENU BAR -->
+                        <div class="main">
+                            <div class="tail-top-menu">
+                                <div class="top-menu clear">
+                                    <div class="fright">
+                                    </div>
+                                    <div class="fleft">
+                                        <div class="moduletable">
+                                            <uc:HM ID="HMenu" runat="server" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- THE LOWER HAND BAR AND THE MAIN CONTENT AREA -->
+                        <div class="main">
+                            <div class="tail-content clear">
+                                <div id="content">
+                                    <table cellspacing="0" cellpadding="0" width="100%">
+                                        <tr>
+                                            <td>
+                                                <asp:UpdatePanel ID="ss" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:Panel ID="myPanel" runat="server">
+                                                        </asp:Panel>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                                <asp:Panel class="padding" ID="g" runat="server">
+                                                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                                    </asp:ContentPlaceHolder>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- FOOTER -->
+                        </div>
+                    </div>
+                </td>
+                <td class="BodyWrapMiddleRight">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="BodyWrapLeftBottom">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td class="BodyWrapMiddleBottom">
+                    &nbsp;
+                </td>
+                <td class="BodyWrapRightBottom">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <div class="main">
+            <div class="footer-indent">
+                <div class="footer-line clear">
+                    <span class="newsLinks">Designed & Developed By</span> <a href="http://www.matrixgambia.com/">
+                        <span class="newsLinks">Matrix Solutions Co. Ltd</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+</body>
+</html>

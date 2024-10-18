@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageSimple.master.cs"
+    Inherits="MasterPageSimple" %>
+
+<%@ Register Src="~/CustomControls/MenuControl_Horizontal.ascx" TagName="HMenu" TagPrefix="HMenu" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link type="text/css" href="_assets/css/glowbutton.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../_assets/js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../_assets/js/jquery.metadata.min.js"></script>
+
+    <script type="text/javascript" src="../_assets/js/jquery.color.js"></script>
+
+    <script type="text/javascript" src="../_assets/js/jquery.glowbuttons.js"></script>
+
+    <script type="text/javascript">
+    
+                  function tabChanged(sender, args)
+         {
+                    var Inputs = document.getElementsByTagName("div");
+                    for(var n = 0; n < Inputs.length; ++n)
+                    {
+                        if(Inputs[n].id.indexOf('panTab',0) >= 0)
+                        {        
+                            Inputs[n].style.display='none'
+                            Inputs[n].style.visibility='hidden'
+                            break;
+                        }
+                    }
+        }
+         
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="f-small custom bg-grey iehandle" id="ff-palatino">
+    <form id="frmMaster" runat="server">
+    <asp:ScriptManager ID="ScriptManager2" runat="server" EnablePartialRendering="true">
+    </asp:ScriptManager>
+    <div id="page-bg">
+        <div class="wrapper">
+            <div class="png" id="body-left">
+                <div class="png" id="body-right">
+                    <div id="header-bar">
+                    </div>
+                    <div class="moomenu" id="horiz-menu">
+                        <div style="width: 100%; vertical-align: middle; text-align: right;">
+                            <asp:LinkButton ID="lnkLogout" runat="server" ForeColor="White" OnClick="lnkLogout_Click">Log Out</asp:LinkButton>
+                        </div>
+                    </div>
+                    <div id="main-body">
+                        <div id="main-body-surround">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div id="bottom">
+                            <div class="copyright-block">
+                                <div id="copyright">
+                                    <span class="newsLinks">Designed & Developed By</span> <a href="http://www.muskysoftware.com/">
+                                        <span class="newsLinks">Musky Software Solutions</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom" />
+    </form>
+</body>
+</html>

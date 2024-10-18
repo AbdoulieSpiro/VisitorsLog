@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="HRSystemWeb.MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="CustomControls/MenuControl_Horizontal.ascx" TagName="HM" TagPrefix="uc" %>
+<%@ Register Src="~/CustomControls/PageHeader.ascx" TagName="PageHeader" TagPrefix="uc1" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="assets/js/config.js"></script>
+    <script src="vendors/simplebar/simplebar.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="assets/css/theme-rtl.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/user-rtl.css" rel="stylesheet">
+    <link href="assets/css/user.css" rel="stylesheet">
+    <link href="vendors/prism/prism-okaidia.css" rel="stylesheet">
+    <link href="Content/Site.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+        if (isRTL) {
+            var linkDefault = document.getElementById('style-default');
+            var userLinkDefault = document.getElementById('user-style-default');
+            linkDefault.setAttribute('disabled', true);
+            userLinkDefault.setAttribute('disabled', true);
+            document.querySelector('html').setAttribute('dir', 'rtl');
+        } else {
+            var linkRTL = document.getElementById('style-rtl');
+            var userLinkRTL = document.getElementById('user-style-rtl');
+            linkRTL.setAttribute('disabled', true);
+            userLinkRTL.setAttribute('disabled', true);
+        }
+    </script>
+    <style>
+        .dropdown:hover > .dropdown-menu {
+            display: block !important;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block !important;
+            left: 100%;
+            margin-top: -37px;
+        }
+
+        .dropdown-item {
+            font-size: small; /* 13px */
+        }
+
+        .dropdown-toggle::after {
+            font-size: var(--font-md);
+            margin-bottom: -2px;
+        }
+
+        .dropdown-menu li a.active {
+            color: #fff;
+        }
+
+        .custom-toggle-arrow {
+            font-size: 18px;
+            margin-top: 1px;
+            line-height: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <!-- Main Content -->
+        <main class="main" id="top">
+            <script>
+                var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+                if (isFluid) {
+                    var container = document.querySelector('[data-layout]');
+                    container.classList.remove('container');
+                    container.classList.add('container-fluid');
+                }
+            </script>
+            <uc:HM ID="HMenu" runat="server" />
+            <div class="container" data-layout="container" style="padding-top: 10px;">
+                <div class="content" style="padding-top: 10px;">
+                    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <footer class="footer">
+                        <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+                            <div class="col-12 col-sm-auto text-center">
+                                <p class="mb-0 text-600">
+                                    <span class="d-none d-sm-inline-block">| </span>
+                                    <br class="d-sm-none" />
+                                    2024 &copy; <a href="">Design and Developed by Matrix Solution Co. Ltd</a>
+                                </p>
+                            </div>
+                            <div class="col-12 col-sm-auto text-center">
+                                <p class="mb-0 text-600">v2.0.0</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+        <!-- JavaScripts -->
+        <script src="vendors/popper/popper.min.js"></script>
+        <script src="vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="vendors/anchorjs/anchor.min.js"></script>
+        <script src="vendors/is/is.min.js"></script>
+        <script src="vendors/echarts/echarts.min.js"></script>
+        <script src="vendors/fontawesome/all.min.js"></script>
+        <script src="vendors/lodash/lodash.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+        <script src="vendors/list.js/list.min.js"></script>
+        <script src="assets/js/theme.js"></script>
+        <script src="vendors/prism/prism.js"></script>
+    </form>
+</body>
+</html>
+
+
+
+
+<%--
+                            <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="Finance">Finance</a>
+    <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="Finance">
+        <div class="bg-white dark__bg-1000 rounded-3 py-2">
+            <a class="dropdown-item link-600 fw-medium" href="../Request/Request.aspx">Request</a>
+            <a class="dropdown-item link-600 fw-medium" href="../Transaction/RequestList.aspx">Receive Request</a>
+            <a class="dropdown-item link-600 fw-medium" href="">Approve Purchase</a>
+            <a class="dropdown-item link-600 fw-medium" href="">Approve Sales</a>
+            <div class="dropdown">
+                <a class="dropdown-item link-600 fw-medium dropdown-toggle" href="#" id="subFinance" data-bs-toggle="collapse" aria-expanded="false" aria-controls="subFinance">Sub Finance</a>
+                <ul class="dropdown-menu collapse" id="subFinance">
+                    <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Item 1</a></li>
+                    <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Item 2</a></li>
+                    <li>
+                        <a class="dropdown-item link-600 fw-medium dropdown-indicator" href="#subSubFinance" data-bs-toggle="collapse" aria-expanded="false" aria-controls="subSubFinance">Sub Sub Finance</a>
+                        <ul class="dropdown-menu collapse" id="subSubFinance">
+                            <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Sub Item 1</a></li>
+                            <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Sub Item 2</a></li>
+                            <li>
+                                <a class="dropdown-item link-600 fw-medium dropdown-indicator" href="#subSubSubFinance" data-bs-toggle="collapse" aria-expanded="false" aria-controls="subSubSubFinance">Sub Sub Sub Finance</a>
+                                <ul class="dropdown-menu collapse" id="subSubSubFinance">
+                                    <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Sub Sub Item 1</a></li>
+                                    <li><a class="dropdown-item link-600 fw-medium" href="#!">Sub Sub Sub Item 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>--%>

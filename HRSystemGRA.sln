@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HRSystemWeb", "HRSystemWeb\", "{45660FB8-9ACA-48B7-96FA-2489B36F426E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		ProjectReferences = "{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}|SMSServer.dll;{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}|GridRowsDrag.dll;{68073283-9B4B-44E7-BEFE-CE5EF023CEED}|LicensingDLL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/HRSystemWeb"
+		Debug.AspNetCompiler.PhysicalPath = "HRSystemWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HRSystemWeb\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/HRSystemWeb"
+		Release.AspNetCompiler.PhysicalPath = "HRSystemWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HRSystemWeb\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51170"
+		VWDDynamicPort = "false"
+		SlnRelativePath = "HRSystemWeb\"
+		StartServerOnDebug = "true"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRSystemServer", "HRSystemServer\HRSystemServer.csproj", "{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridRowsDrag", "GridRowsDrag\GridRowsDrag.csproj", "{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicensingDLL", "Licensing DLL\LicensingDLL.csproj", "{68073283-9B4B-44E7-BEFE-CE5EF023CEED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|.NET.Build.0 = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|.NET.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|.NET.Build.0 = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{45660FB8-9ACA-48B7-96FA-2489B36F426E}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Release|.NET.ActiveCfg = Release|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4C5C59A8-8DD9-4F04-929E-B76E6DFD7201}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Release|.NET.ActiveCfg = Release|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5EB295B3-B4CB-41EE-885A-DBB01C0205E9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Release|.NET.ActiveCfg = Release|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{68073283-9B4B-44E7-BEFE-CE5EF023CEED}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04855492-3ABB-4FEB-B531-B7247C0CFC1D}
+	EndGlobalSection
+EndGlobal
